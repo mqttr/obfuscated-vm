@@ -1,0 +1,6 @@
+[submodule "seabios"]
+	path = seabios
+	url = https://git.seabios.org/seabios.git
+[submodule "obfuscated-qemu"]
+	path = obfuscated-qemu
+	url = git@github.com:mqttr/obfuscated-qemu

@@ -1,0 +1,7 @@
+xen-devel
+glib2-devel
+dtc
+gntls
+pulseaudio-libs-devel
+libnfs-devel
+spice-server-devel
