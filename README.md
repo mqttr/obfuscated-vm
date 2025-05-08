@@ -6,6 +6,8 @@ This project is designed to make it easy to see and to replicate my semester pro
 
 This is a little thrown together. I plan on improving it in the future.
 
+Also check out my other project: https://github.com/mqttr/showcase-vmexit. It's related to this project showcasing the power of vm exit.
+
 
 # Getting Started
 
