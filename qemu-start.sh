@@ -1,7 +1,9 @@
 #!/bin/bash
 
-WIN_INSTALLER=/mnt/Secondary/VMs/Sources/Win10.iso
-OS_LOCATION=/mnt/Secondary/VMs/Custom/virtualdisk.img
+# Win Installer ($1) is the installer for your OS. Typically an ISO file. Only needed when setting up the OS
+WIN_INSTALLER=$1
+# Target for the raw virtual hard drive
+OS_LOCATION=$2
 BIOS=seabios/out
 
 ./built-qemu/qemu-system-x86_64 -enable-kvm \
@@ -13,12 +15,12 @@ BIOS=seabios/out
 	-device virtio-net-pci \
 	-usb \
 	-device usb-tablet \
-	-device usb-ehci,id=xhci \
+	-device qemu-xhci,id=xhci \
 	-device usb-host,vendorid=0x04f2,productid=0xb64f \
 	-device usb-host,vendorid=0x2972,productid=0x0047 \
 	-device usb-host,vendorid=0x0909,productid=0x004d \
 	-L seabios/out \
-	-smbios type=1,manufacturer="Matthew's Computer",product="Some Product Some Where" \
+	-smbios type=1,manufacturer="Dell",product="Optiplex" \
 	-smbios type=17,manufacturer=Samsung,serial=12345678 \
 	-acpitable file=wmi_spoof/dsdt.aml \
 	-sandbox on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny -msg timestamp=on
